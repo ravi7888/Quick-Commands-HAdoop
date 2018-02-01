@@ -1,0 +1,5 @@
+Find leader of Zookeeper Ensemble:
+	1. Check zookeeper server logs and search for LEAD
+		grep LEAD /var/log/zookeeper/zookeeper-zookeeper-server-xyz.out
+	2.  Use "nc" command to listen TCP communication on port 2181 and determine if the ZooKeeper server is a leader or a follower.
+	  runOnAll 'echo stat | nc localhost 2181 | grep Mode'
